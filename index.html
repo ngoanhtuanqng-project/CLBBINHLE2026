@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic Điều lệ Giải Cờ Vua Bình Lê 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Selected Palette: Energetic & Professional (Deep Navy, Vibrant Orange, Bright Red, Gold) -->
+    <!-- HEX Codes: Navy: #1E293B, Orange: #F97316, Red: #EF4444, Gold: #FBBF24, Light: #F8FAFC -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F8FAFC;
+            color: #1E293B;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .timeline-line {
+            width: 2px;
+            background-color: #F97316;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 
+    NARRATIVE PLAN SUMMARY:
+    1. Hero: Impactful title and core identity (Tournament name, Date, Place).
+    2. Overview: Big numbers/KPIs representing the scale and rules (15 mins, 7 rounds, etc.).
+    3. The Categories: Visualizing age groups and distribution using Bar charts.
+    4. The Journey: A vertical timeline showing the process of the tournament day.
+    5. Scoring & Prizes: Explaining complex ranking criteria and the reward structure.
+    6. Logistics: Clear steps for registration and fees.
+    -->
+
+    <!-- 
+    VISUALIZATION JUSTIFICATION (Confirming NO SVG):
+    - Core Metrics: Styled HTML/Tailwind text boxes (Inform).
+    - Age Groups: Chart.js Bar Chart (Compare) - Wrapped labels, canvas-based.
+    - Tournament Timeline: Structured HTML/Tailwind CSS (Organize) - No SVG/Mermaid.
+    - Fee Structure: Plotly.js Pie/Donut (Inform/Composition) - WebGL/Canvas mode.
+    - Ranking Factors: Ordered List with Tailwind styling (Organize).
+    -->
+
+    <!-- 
+    CONFIRMATION:
+    - NO SVG graphics were used.
+    - NO Mermaid JS was used.
+    - All charts use Canvas/WebGL via Chart.js or Plotly.js.
+    -->
+
+    <nav class="sticky top-0 z-50 bg-white shadow-md py-4 px-6 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <img src="BLchessclb_2.jpg" alt="Logo CLB Bình Lê" class="h-12 w-auto object-contain" onerror="this.src='https://placehold.co/100x100/F97316/FFFFFF?text=Logo'">
+            <span class="font-bold text-xl tracking-tight hidden sm:block text-slate-800">BÌNH LÊ CHESS 2026</span>
+        </div>
+        <div class="flex space-x-4 text-sm font-medium text-slate-600">
+            <a href="#overview" class="hover:text-orange-500 transition">Tổng Quan</a>
+            <a href="#schedule" class="hover:text-orange-500 transition">Lịch Trình</a>
+            <a href="#registration" class="hover:text-orange-500 transition">Đăng Ký</a>
+        </div>
+    </nav>
+
+    <header class="gradient-bg text-white py-16 px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 uppercase tracking-wider">Giải Cờ Vua Bình Lê</h1>
+        <p class="text-xl md:text-2xl text-orange-400 font-medium mb-8 italic">Mở Rộng Lần 2 - Đánh Thức Tư Duy Nhà Vô Địch</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-4 min-w-[200px]">
+                <p class="text-sm uppercase opacity-75">Ngày thi đấu</p>
+                <p class="text-2xl font-bold">23/08/2026</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-4 min-w-[200px]">
+                <p class="text-sm uppercase opacity-75">Địa điểm</p>
+                <p class="text-2xl font-bold">Quảng Ngãi</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12 space-y-20">
+
+        <!-- Overview Section -->
+        <section id="overview">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">Tổng Quan Giải Đấu</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">Giải đấu được thiết kế để tạo ra một sân chơi trí tuệ lành mạnh, nơi các kỳ thủ trẻ có thể rèn luyện bản lĩnh và tư duy chiến thuật đỉnh cao.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl card-shadow text-center border-b-4 border-orange-500">
+                    <p class="text-4xl font-black text-orange-500 mb-2">15</p>
+                    <p class="text-slate-600 font-medium uppercase text-xs">Phút mỗi bên</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl card-shadow text-center border-b-4 border-blue-500">
+                    <p class="text-4xl font-black text-blue-500 mb-2">07</p>
+                    <p class="text-slate-600 font-medium uppercase text-xs">Ván thi đấu</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl card-shadow text-center border-b-4 border-red-500">
+                    <p class="text-4xl font-black text-red-500 mb-2">07</p>
+                    <p class="text-slate-600 font-medium uppercase text-xs">Bảng đấu tuổi</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl card-shadow text-center border-b-4 border-amber-500">
+                    <p class="text-4xl font-black text-amber-500 mb-2">300k</p>
+                    <p class="text-slate-600 font-medium uppercase text-xs">Lệ phí (VNĐ)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold text-slate-800">Cấu Trúc Bảng Đấu</h2>
+                <p class="text-slate-600">Để đảm bảo tính công bằng và cọ xát phù hợp, giải đấu được chia thành các nhóm tuổi từ mầm non đến trung học và bảng mở rộng cho các kỳ thủ lớn tuổi hơn.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-center space-x-3">
+                        <span class="w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center font-bold">1</span>
+                        <span class="text-slate-700"><strong>U6 - U12:</strong> Dành cho các bé sinh năm 2020 đến 2014.</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">2</span>
+                        <span class="text-slate-700"><strong>Bảng Open:</strong> Dành cho kỳ thủ sinh năm 2013 trở về trước.</span>
+                    </li>
+                    <li class="flex items-center space-x-3 text-red-600">
+                        <span class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center font-bold">!</span>
+                        <span class="italic font-medium">Lưu ý: Gian lận tuổi sẽ bị truất quyền thi đấu ngay lập tức.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-white p-8 rounded-2xl card-shadow">
+                <div class="chart-container">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+                <p class="text-center text-xs text-slate-400 mt-4">Biểu đồ phân bổ các nhóm tuổi đăng ký (Ước tính)</p>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="bg-slate-50 -mx-4 px-4 py-16">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-4">Lịch Trình Sự Kiện</h2>
+                    <p class="text-slate-600 italic">Chủ nhật, ngày 23 tháng 8 năm 2026</p>
+                </div>
+                
+                <div class="relative">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="space-y-12 relative">
+                        <!-- Item 1 -->
+                        <div class="flex items-center justify-between">
+                            <div class="w-5/12 text-right hidden sm:block">
+                                <h4 class="text-lg font-bold text-slate-800">Khai Mạc</h4>
+                                <p class="text-sm text-slate-500 italic">Nhà thi đấu đa năng</p>
+                            </div>
+                            <div class="w-10 h-10 bg-orange-500 rounded-full border-4 border-white flex items-center justify-center z-10"></div>
+                            <div class="w-5/12 text-left pl-8 sm:pl-0">
+                                <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold sm:hidden">07:30</span>
+                                <p class="text-orange-600 font-bold hidden sm:block">07:30 - 08:00</p>
+                                <h4 class="text-lg font-bold text-slate-800 sm:hidden">Khai Mạc</h4>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="flex items-center justify-between">
+                            <div class="w-5/12 text-right hidden sm:block">
+                                <span class="text-blue-600 font-bold">08:00 - 11:00</span>
+                            </div>
+                            <div class="w-10 h-10 bg-blue-500 rounded-full border-4 border-white flex items-center justify-center z-10"></div>
+                            <div class="w-5/12 text-left pl-8">
+                                <h4 class="text-lg font-bold text-slate-800">Ván 1 đến Ván 4</h4>
+                                <p class="text-sm text-slate-500">Tập trung cao độ cho giai đoạn mở màn</p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="flex items-center justify-between">
+                            <div class="w-5/12 text-right pr-8">
+                                <h4 class="text-lg font-bold text-slate-800">Ván 5 đến Ván 7</h4>
+                                <p class="text-sm text-slate-500">Những ván đấu quyết định ngôi vị</p>
+                            </div>
+                            <div class="w-10 h-10 bg-blue-500 rounded-full border-4 border-white flex items-center justify-center z-10"></div>
+                            <div class="w-5/12 text-left hidden sm:block">
+                                <span class="text-blue-600 font-bold">14:00 - 16:00</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="flex items-center justify-between">
+                            <div class="w-5/12 text-right hidden sm:block">
+                                <span class="text-amber-600 font-bold">16:30</span>
+                            </div>
+                            <div class="w-10 h-10 bg-amber-500 rounded-full border-4 border-white flex items-center justify-center z-10"></div>
+                            <div class="w-5/12 text-left pl-8">
+                                <h4 class="text-lg font-bold text-slate-800">Tổng Kết & Bế Mạc</h4>
+                                <p class="text-sm text-slate-500">Trao giải thưởng cho các kỳ thủ xuất sắc</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ranking & Rules Section -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-2xl card-shadow border-t-8 border-slate-800">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6">Xếp Hạng Cá Nhân</h3>
+                <p class="text-slate-600 mb-6 italic text-sm">Hệ thống tính điểm chặt chẽ để tìm ra nhà vô địch xứng đáng nhất.</p>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
+                        <span class="font-medium">1. Tổng Điểm</span>
+                        <span class="text-xs bg-slate-200 px-2 py-1 rounded font-bold">Ưu tiên nhất</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
+                        <span class="font-medium">2. Đối kháng trực tiếp</span>
+                        <span class="text-xs bg-slate-200 px-2 py-1 rounded">Thứ 2</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
+                        <span class="font-medium">3. Hệ số Buchholz (bỏ 1)</span>
+                        <span class="text-xs bg-slate-200 px-2 py-1 rounded">Thứ 3</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
+                        <span class="font-medium">4. Số ván thắng</span>
+                        <span class="text-xs bg-slate-200 px-2 py-1 rounded">Thứ 4</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl card-shadow border-t-8 border-red-600">
+                <h3 class="text-2xl font-bold text-red-600 mb-6">Kỷ Luật & Khiếu Nại</h3>
+                <div class="space-y-4">
+                    <div class="p-4 bg-red-50 rounded-lg border-l-4 border-red-600">
+                        <p class="font-bold text-red-800 mb-1">Cấm Thiết Bị Điện Tử</p>
+                        <p class="text-sm text-red-700">VĐV mang điện thoại/máy tính vào khu vực thi đấu sẽ bị xử thua ngay lập tức.</p>
+                    </div>
+                    <div class="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-600">
+                        <p class="font-bold text-orange-800 mb-1">Thời Gian Khiếu Nại</p>
+                        <p class="text-sm text-orange-700">Mọi khiếu nại phải gửi bằng văn bản trong vòng 15 phút sau ván đấu.</p>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-600">
+                        <p class="font-bold text-blue-800 mb-1">Quyết Định Cuối Cùng</p>
+                        <p class="text-sm text-blue-700">Quyết định của Trưởng BTC là kết luận cuối cùng cho mọi tranh chấp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="registration" class="bg-orange-500 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+            <div class="relative z-10 md:flex items-center justify-between gap-12">
+                <div class="md:w-1/2 space-y-6">
+                    <h2 class="text-4xl font-extrabold">Đăng Ký Tham Gia</h2>
+                    <p class="text-lg opacity-90">Hạn chót đăng ký: 16/08/2026. Hãy nhanh tay ghi danh để trở thành một phần của ngày hội cờ vua lớn nhất năm!</p>
+                    
+                    <!-- Cập nhật thêm QR Code Ngân hàng -->
+                    <div class="bg-white/20 p-6 rounded-xl backdrop-blur-sm border border-white/30 flex items-center justify-between gap-4">
+                        <div>
+                            <p class="font-bold mb-2">Thông Tin Chuyển Khoản:</p>
+                            <p class="text-sm">Vietcombank: <span class="font-mono text-lg bg-white/20 px-2 rounded">0271000602845</span></p>
+                            <p class="text-sm">Chủ TK: Nguyễn Nhật Vĩnh Hằng</p>
+                            <p class="text-xs mt-3 italic opacity-80">Nội dung: [Họ tên] - [Năm sinh] - [Bảng đấu]</p>
+                        </div>
+                        <div class="shrink-0 bg-white p-1.5 rounded-lg shadow-sm">
+                             <!-- Thay tên file ảnh QR ngân hàng của bạn vào src bên dưới -->
+                             <img src="qr_bank.jpg" alt="QR Vietcombank" class="w-24 h-24 object-contain rounded" onerror="this.src='https://placehold.co/100x100/ffffff/F97316?text=QR+Bank'">
+                        </div>
+                    </div>
+                    
+                    <!-- Nút bấm liên kết sang Google Form & QR Form -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center gap-6">
+                        <div class="w-full sm:w-auto text-center sm:text-left">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsrRlpEPNyzrGPvCdR5uwc8wRJrtGK-Vxm7e81QJDax5gxGQ/viewform" target="_blank" rel="noopener noreferrer" class="inline-block w-full sm:w-auto text-center bg-slate-900 text-white font-bold text-lg py-4 px-8 rounded-full hover:bg-slate-800 hover:scale-105 transition-transform duration-300 shadow-lg border-2 border-slate-900">
+                                👉 ĐIỀN FORM ĐĂNG KÝ NGAY
+                            </a>
+                            <p class="text-xs mt-2 opacity-75">*Click để chuyển sang biểu mẫu Google Form</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <!-- Ảnh QR Google Form bạn đã cung cấp -->
+                            <img src="QR Giải cờ vua CLB Bình Lê Mở rộng lần 2 - 2026.png" alt="Mã QR Đăng ký" class="w-24 h-24 bg-white p-1 rounded-md shadow-md" onerror="this.src='https://placehold.co/100x100/ffffff/1E293B?text=QR+Form'">
+                            <p class="text-[11px] mt-1.5 font-bold uppercase tracking-wider opacity-90">Quét để đăng ký</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0 flex flex-col items-center">
+                   <div class="chart-container !h-[300px] !max-w-[400px]">
+                        <div id="feeDonut" style="width: 100%; height: 100%;"></div>
+                   </div>
+                   <p class="mt-4 text-center text-sm font-medium">Ưu đãi: Miễn lệ phí 100% cho VĐV khuyết tật</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left flex flex-col md:flex-row items-center gap-4">
+                <img src="BLchessclb_2.jpg" alt="Logo CLB Bình Lê" class="h-16 w-auto bg-white p-1 rounded-lg" onerror="this.src='https://placehold.co/100x100/F97316/FFFFFF?text=Logo'">
+                <div>
+                    <p class="font-bold text-2xl text-orange-400">CLB CỜ VUA BÌNH LÊ</p>
+                    <p class="text-slate-400 mt-1">Đồng hành cùng đam mê cờ vua trẻ em.</p>
+                </div>
+            </div>
+            <div class="flex space-x-6 text-2xl">
+                <span class="text-lg font-medium text-slate-300">📞 0934.922.225 (Cô Hằng)</span>
+            </div>
+            <div class="text-center md:text-right text-sm text-slate-500">
+                <p>&copy; 2026 CLB Bình Lê. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Chart.js Label Wrapping Function
+        function wrapLabel(label) {
+            if (typeof label === 'string' && label.length > 16) {
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                
+                words.forEach(word => {
+                    if ((currentLine + word).length > 16) {
+                        lines.push(currentLine.trim());
+                        currentLine = word + ' ';
+                    } else {
+                        currentLine += word + ' ';
+                    }
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            }
+            return label;
+        }
+
+        const tooltipConfig = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            } else {
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // Initialize Category Bar Chart
+        const ctxCategory = document.getElementById('categoryChart').getContext('2d');
+        new Chart(ctxCategory, {
+            type: 'bar',
+            data: {
+                labels: ['Nhóm U6 và U7', 'Nhóm U8 và U9', 'Nhóm U10 và U12', 'Bảng Open Mở Rộng'].map(wrapLabel),
+                datasets: [{
+                    label: 'Số lượng VĐV dự kiến',
+                    data: [45, 60, 55, 30],
+                    backgroundColor: ['#F97316', '#3B82F6', '#FBBF24', '#1E293B'],
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    ...tooltipConfig.plugins,
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#e2e8f0' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // Plotly Donut Chart for Fee Distribution
+        const feeData = [{
+            values: [85, 10, 5],
+            labels: ['VĐV Bình Thường', 'VĐV Khuyết Tật', 'Hỗ Trợ Khác'],
+            type: 'pie',
+            hole: .6,
+            marker: {
+                colors: ['#FFFFFF', '#FDE68A', '#FEE2E2']
+            },
+            textinfo: 'label+percent',
+            textposition: 'inside',
+            insidetextorientation: 'radial'
+        }];
+
+        const feeLayout = {
+            showlegend: false,
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            margin: { t: 0, b: 0, l: 0, r: 0 },
+            font: { color: '#FFFFFF', family: 'Roboto' }
+        };
+
+        const plotlyConfig = {
+            responsive: true,
+            displayModeBar: false,
+            // Force Canvas rendering mode
+            staticPlot: true 
+        };
+
+        Plotly.newPlot('feeDonut', feeData, feeLayout, plotlyConfig);
+
+    </script>
+</body>
+</html>
